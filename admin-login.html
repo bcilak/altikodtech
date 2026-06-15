@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Altıkod Admin Giriş</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/admin.css" />
+  </head>
+  <body class="admin-page">
+    <main class="login-shell">
+      <form class="admin-card login-card" id="login-form">
+        <img class="admin-logo" src="/assets/logo-altikod.svg" alt="Altıkod Digital Solutions" />
+        <h1>Admin Girişi</h1>
+        <p>Demo talepleri, içerikler ve ilk ekran video alanını yönetmek için giriş yapın.</p>
+        <label>Admin Şifresi<input type="password" name="password" autocomplete="current-password" required /></label>
+        <button class="button primary" type="submit">Panele Gir</button>
+        <p class="form-status" id="login-status" role="status"></p>
+      </form>
+    </main>
+    <script src="/admin-login.js"></script>
+  </body>
+</html>

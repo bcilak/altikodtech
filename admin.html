@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Altıkod Admin Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/admin.css" />
+  </head>
+  <body class="admin-page">
+    <header class="admin-header">
+      <a class="brand-logo" href="/" aria-label="Altıkod ana sayfa">
+        <img src="/assets/logo-altikod.svg" alt="Altıkod Digital Solutions" />
+      </a>
+      <nav aria-label="Admin menü">
+        <a href="#leads">Demo Talepleri</a>
+        <a href="#content">İçerikler</a>
+        <a href="#video">Video</a>
+        <a href="#contact-settings">İletişim</a>
+      </nav>
+      <button class="button secondary" id="logout-button" type="button">Çıkış</button>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <div>
+          <span class="eyebrow">Altıkod Admin</span>
+          <h1>Landing yönetim paneli</h1>
+          <p>Demo taleplerini takip edin, hizmet ve ürün içeriklerini yönetin, ilk ekrandaki tanıtım videosunu güncelleyin.</p>
+        </div>
+        <div class="metric-grid">
+          <div><strong id="metric-leads">0</strong><span>Demo talebi</span></div>
+          <div><strong id="metric-content">0</strong><span>Aktif içerik</span></div>
+          <div><strong id="metric-video">Yok</strong><span>Video durumu</span></div>
+        </div>
+      </section>
+
+      <section class="admin-card" id="leads">
+        <div class="admin-section-head">
+          <div>
+            <span class="eyebrow">Demo Talepleri</span>
+            <h2>Gelen lead kayıtları</h2>
+          </div>
+          <button class="button secondary" id="refresh-button" type="button">Yenile</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Tarih</th>
+                <th>Ad Soyad</th>
+                <th>E-posta</th>
+                <th>Çözüm</th>
+                <th>Mesaj</th>
+                <th>Durum</th>
+              </tr>
+            </thead>
+            <tbody id="leads-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-card" id="content">
+        <div class="admin-section-head">
+          <div>
+            <span class="eyebrow">İçerik Yönetimi</span>
+            <h2>Sayfa blokları</h2>
+          </div>
+          <select id="collection-select" aria-label="İçerik tipi">
+            <option value="services">Hizmetler</option>
+            <option value="products">Ürünler</option>
+            <option value="cases">Referans Çalışmalar</option>
+            <option value="faqs">SSS</option>
+          </select>
+        </div>
+
+        <form class="admin-form" id="content-form">
+          <input type="hidden" name="id" />
+          <label>Başlık / Soru<input name="title" required /></label>
+          <label>Kısa Açıklama / Cevap<textarea name="summary" required></textarea></label>
+          <label class="field-services">Fayda Maddeleri<textarea name="items" placeholder="Her satıra bir madde"></textarea></label>
+          <label class="field-products">Kullanım Alanları<textarea name="usage"></textarea></label>
+          <label class="field-products">Faydalar<textarea name="benefits"></textarea></label>
+          <label class="field-cases">Problem<textarea name="problem"></textarea></label>
+          <label class="field-cases">Çözüm<textarea name="solution"></textarea></label>
+          <label class="field-cases">Sonuç<textarea name="result"></textarea></label>
+          <label class="check-row"><input name="active" type="checkbox" checked /> Aktif göster</label>
+          <div class="form-actions">
+            <button class="button primary" type="submit">Kaydet</button>
+            <button class="button secondary" id="reset-content-form" type="button">Yeni İçerik</button>
+          </div>
+          <p class="form-status" id="content-status" role="status"></p>
+        </form>
+
+        <div class="content-list" id="content-list"></div>
+      </section>
+
+      <section class="admin-card" id="video">
+        <span class="eyebrow">İlk Ekran Videosu</span>
+        <h2>Hero video alanı</h2>
+        <form class="admin-form" id="settings-form">
+          <label>Video Başlığı<input name="videoTitle" required /></label>
+          <label>Alt Metin<input name="videoSubtitle" required /></label>
+          <label>Video URL<input name="videoUrl" placeholder="YouTube embed, mp4 veya tanıtım linki" /></label>
+          <label>CTA Metni<input name="videoCtaLabel" required /></label>
+          <button class="button primary" type="submit">Video Alanını Güncelle</button>
+          <p class="form-status" id="settings-status" role="status"></p>
+        </form>
+      </section>
+
+      <section class="admin-card" id="contact-settings">
+        <span class="eyebrow">Şirket Bilgileri</span>
+        <h2>İletişim alanı</h2>
+        <form class="admin-form" id="contact-form">
+          <label>Telefon<input name="phone" /></label>
+          <label>E-posta<input name="email" type="email" /></label>
+          <label>WhatsApp<input name="whatsapp" /></label>
+          <label>Adres<textarea name="address"></textarea></label>
+          <label>LinkedIn<input name="linkedin" /></label>
+          <label>Instagram<input name="instagram" /></label>
+          <label>Web Sitesi<input name="website" /></label>
+          <button class="button primary" type="submit">İletişim Bilgilerini Güncelle</button>
+          <p class="form-status" id="contact-status" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="/admin.js"></script>
+  </body>
+</html>

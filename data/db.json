@@ -1,0 +1,220 @@
+{
+  "settings": {
+    "videoTitle": "Altıkod Demo",
+    "videoSubtitle": "AI, WhatsApp, web + mobil ve entegrasyon çözümleri",
+    "videoUrl": "/assets/altikod-demo.mp4",
+    "videoCtaLabel": "Demo talep et"
+  },
+  "services": [
+    {
+      "id": "svc-web",
+      "title": "Kurumsal Web Yazılımları",
+      "summary": "Şirket süreçlerine özel web portalları, yönetim panelleri ve müşteri arayüzleri geliştiririz.",
+      "active": true,
+      "items": [
+        "Operasyonel süreçleri tek panelde toplar.",
+        "Yetkilendirme, raporlama ve veri takibini kolaylaştırır.",
+        "Kurumsal marka deneyimini güçlendirir."
+      ]
+    },
+    {
+      "id": "svc-mobile",
+      "title": "Mobil Uygulama Geliştirme",
+      "summary": "iOS ve Android için kullanıcı dostu, güvenli ve ölçeklenebilir mobil uygulamalar üretiriz.",
+      "items": [
+        "Müşteri ve saha ekiplerine hızlı erişim sağlar.",
+        "Bildirim, konum, kamera ve ödeme özelliklerini entegre eder.",
+        "Mobil kanaldaki etkileşimi artırır."
+      ],
+      "active": true
+    },
+    {
+      "id": "svc-ai",
+      "title": "Yapay Zeka Çözümleri",
+      "summary": "İş süreçlerinize özel yapay zeka modelleri, ajanlar ve analiz sistemleri tasarlarız.",
+      "items": [
+        "Tekrarlayan işleri otomatikleştirir.",
+        "Veri analizini hızlandırır.",
+        "Karar destek süreçlerini güçlendirir."
+      ],
+      "active": true
+    },
+    {
+      "id": "svc-chatbot",
+      "title": "Chatbot Sistemleri",
+      "summary": "Web siteniz, WhatsApp veya iç sistemleriniz için akıllı destek ve satış asistanları kurarız.",
+      "items": [
+        "7/24 müşteri yanıtı sağlar.",
+        "RAG ile doküman ve web verisinden cevap üretir.",
+        "Satış ve destek ekiplerinin yükünü azaltır."
+      ],
+      "active": true
+    },
+    {
+      "id": "svc-whatsapp",
+      "title": "WhatsApp Business Entegrasyonları",
+      "summary": "WhatsApp üzerinden destek, satış, randevu, sipariş ve bildirim akışları oluştururuz.",
+      "items": [
+        "Müşteri iletişimini en aktif kanala taşır.",
+        "Otomatik mesaj ve yönlendirme senaryoları kurar.",
+        "CRM ve operasyon sistemleriyle entegre çalışır."
+      ],
+      "active": true
+    },
+    {
+      "id": "svc-automation",
+      "title": "Süreç Otomasyonları",
+      "summary": "Manuel takip edilen iş adımlarını otomatik iş akışlarına dönüştürürüz.",
+      "items": [
+        "Zaman kaybını ve insan hatasını azaltır.",
+        "Onay, görev, bildirim ve rapor süreçlerini hızlandırır.",
+        "Departmanlar arası görünürlüğü artırır."
+      ],
+      "active": true
+    },
+    {
+      "id": "svc-custom",
+      "title": "Özel Yazılım Geliştirme",
+      "summary": "Hazır çözümlerin yetmediği noktalarda kurumunuza özel yazılım mimarisi kurarız.",
+      "items": [
+        "İş modelinize tam uyum sağlar.",
+        "Gelecekteki büyüme ihtiyaçlarına göre ölçeklenir.",
+        "Bakımı ve geliştirmesi sürdürülebilir olur."
+      ],
+      "active": true
+    },
+    {
+      "id": "svc-api",
+      "title": "API ve Sistem Entegrasyonları",
+      "summary": "ERP, CRM, ödeme, kargo, e-ticaret, muhasebe ve üçüncü parti sistemleri birbirine bağlarız.",
+      "items": [
+        "Veri tekrarını ve manuel aktarımı önler.",
+        "Sistemler arasında gerçek zamanlı iletişim kurar.",
+        "Raporlama kalitesini yükseltir."
+      ],
+      "active": true
+    }
+  ],
+  "products": [
+    {
+      "id": "prd-chatbot",
+      "title": "AI Chatbot Platformu",
+      "summary": "Web sitesi, doküman ve kurumsal verilerden yanıt üreten akıllı chatbot altyapısı.",
+      "usage": "Müşteri destek, satış ön görüşmesi, ürün yönlendirme, kurum içi bilgi asistanı.",
+      "benefits": "Yanıt süresini düşürür, destek yükünü azaltır, bilgiye erişimi hızlandırır.",
+      "active": true
+    },
+    {
+      "id": "prd-whatsapp",
+      "title": "WhatsApp Destek ve Satış Botu",
+      "summary": "WhatsApp üzerinden otomatik yanıt, yönlendirme, randevu ve satış akışı sunar.",
+      "usage": "E-ticaret, sağlık, hizmet sektörü, bayi ağı, müşteri destek ekipleri.",
+      "benefits": "İletişim hacmini yönetir, müşteri bekleme süresini azaltır, satış fırsatlarını yakalar.",
+      "active": true
+    },
+    {
+      "id": "prd-panel",
+      "title": "Müşteri İletişim Yönetim Paneli",
+      "summary": "Müşteri görüşmelerini, talepleri, durumları ve ekip aksiyonlarını tek panelde toplar.",
+      "usage": "Satış ekipleri, çağrı merkezi, destek operasyonu, saha hizmetleri.",
+      "benefits": "Takip kaybını önler, ekip performansını görünür kılar, süreçleri standartlaştırır.",
+      "active": true
+    },
+    {
+      "id": "prd-reporting",
+      "title": "Raporlama ve Analiz Sistemi",
+      "summary": "Operasyon, satış, müşteri ve performans verilerini anlaşılır raporlara dönüştürür.",
+      "usage": "Yönetim raporları, satış takibi, üretim analizi, müşteri memnuniyeti ölçümü.",
+      "benefits": "Karar alma hızını artırır, veriyi merkezi hale getirir, riskleri erken görünür kılar.",
+      "active": true
+    },
+    {
+      "id": "prd-appointment",
+      "title": "Randevu Yönetim Sistemi",
+      "summary": "Randevu oluşturma, hatırlatma, takvim yönetimi ve müşteri bilgilendirme süreçlerini yönetir.",
+      "usage": "Sağlık kuruluşları, danışmanlık firmaları, servis işletmeleri, eğitim kurumları.",
+      "benefits": "Randevu kaçırma oranını azaltır, ekip takvimini düzenler, müşteri deneyimini iyileştirir.",
+      "active": true
+    },
+    {
+      "id": "prd-voice",
+      "title": "Sesli Yapay Zeka Asistanı",
+      "summary": "Sesli komut, konuşma analizi ve otomatik yönlendirme kabiliyetleri sunan AI asistan.",
+      "usage": "Çağrı merkezi, saha ekipleri, toplantı analizi, müşteri görüşme kalite kontrolü.",
+      "benefits": "Ses kayıtlarını anlamlı veriye çevirir, aksiyonları çıkarır, hizmet kalitesini ölçer.",
+      "active": true
+    }
+  ],
+  "cases": [
+    {
+      "id": "case-production",
+      "title": "Marmara Üretim A.Ş.",
+      "problem": "Üretim raporları manuel hazırlanıyor, bakım talepleri geç fark ediliyordu.",
+      "solution": "Üretim verilerini toplayan raporlama paneli ve bakım bildirim otomasyonu geliştirildi.",
+      "result": "Yönetim raporları günlük hale geldi, bakım taleplerinin takibi hızlandı.",
+      "active": true
+    },
+    {
+      "id": "case-clinic",
+      "title": "Nova Klinik Grubu",
+      "problem": "Randevu yoğunluğu WhatsApp ve telefon kanallarında takip edilemiyordu.",
+      "solution": "WhatsApp botu, randevu yönetimi ve hasta bilgilendirme paneli kuruldu.",
+      "result": "Randevu talepleri tek panelde toplandı, ekip üzerindeki iletişim yükü azaldı.",
+      "active": true
+    },
+    {
+      "id": "case-ecommerce",
+      "title": "TeknoMarket Online",
+      "problem": "Ürün soruları ve sipariş durum talepleri destek ekibini yavaşlatıyordu.",
+      "solution": "AI chatbot, kargo API entegrasyonu ve ürün öneri akışı devreye alındı.",
+      "result": "Sık sorulan talepler otomatikleşti, satış öncesi yanıt süresi kısaldı.",
+      "active": true
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-delivery",
+      "question": "Projelerin teslim süresi ne kadar?",
+      "answer": "Proje kapsamına göre değişir. Basit entegrasyonlar birkaç hafta içinde tamamlanabilirken, özel yazılım ve yapay zeka projeleri analiz, geliştirme ve test aşamalarıyla daha uzun planlanır.",
+      "active": true
+    },
+    {
+      "id": "faq-pricing",
+      "question": "Fiyatlandırma nasıl belirleniyor?",
+      "answer": "Fiyatlandırma; kapsam, entegrasyon sayısı, kullanıcı rolleri, veri yapısı, yapay zeka bileşenleri ve destek ihtiyacına göre belirlenir.",
+      "active": true
+    },
+    {
+      "id": "faq-support",
+      "question": "Proje sonrası destek veriyor musunuz?",
+      "answer": "Evet. Canlıya alma sonrası bakım, hata düzeltme, performans takibi, yeni özellik geliştirme ve danışmanlık desteği sunuyoruz.",
+      "active": true
+    },
+    {
+      "id": "faq-ai",
+      "question": "Yapay zeka çözümleri mevcut sistemlerimize bağlanabilir mi?",
+      "answer": "Evet. CRM, ERP, e-ticaret, ödeme, kargo, çağrı merkezi ve özel API altyapılarıyla entegrasyon kurulabilir.",
+      "active": true
+    }
+  ],
+  "leads": [
+    {
+      "id": "lead-46f7da9f-f86e-4ca5-9c4c-af17fd90bf3a",
+      "name": "Barış Çilak",
+      "email": "bcilak@gmail.com",
+      "interest": "chatbot",
+      "message": "asdasdsad",
+      "status": "new",
+      "createdAt": "2026-06-15T12:20:59.394Z"
+    }
+  ],
+  "contact": {
+    "phone": "+90 543 219 1063",
+    "email": "info@altikodtech.com.tr",
+    "whatsapp": "+90 543 219 1063",
+    "address": "Kasaplar Mah. Vasıf Çınar Cad. No:5/A \nBalıkesir / Türkiye",
+    "linkedin": "linkedin.com/company/altikod",
+    "instagram": "instagram.com/altikoddigital",
+    "website": "altikodtech.com.tr"
+  }
+}
