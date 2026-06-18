@@ -274,6 +274,14 @@
     const container = document.querySelector("#nxc-container");
     if (!toggle || !container || document.querySelector("#altikod-chat-greeting")) return false;
 
+    const brandingLink = container.querySelector(".nxc-branding a");
+    if (brandingLink) {
+      brandingLink.href = "https://chatbot.altikodtech.com.tr/";
+      brandingLink.target = "_blank";
+      brandingLink.rel = "noopener noreferrer";
+      brandingLink.setAttribute("aria-label", "ChatGenius web sitesini yeni sekmede aç");
+    }
+
     const greeting = document.createElement("button");
     greeting.id = "altikod-chat-greeting";
     greeting.type = "button";
