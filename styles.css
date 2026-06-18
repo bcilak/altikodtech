@@ -39,7 +39,8 @@ a {
 
 button,
 input,
-textarea {
+textarea,
+select {
   font: inherit;
 }
 
@@ -74,6 +75,61 @@ h3 {
   padding: 18px clamp(18px, 4vw, 56px);
   border-bottom: 4px solid var(--ink);
   background: var(--cream);
+}
+
+.header-actions {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.language-select {
+  position: relative;
+  display: flex;
+  min-width: 82px;
+}
+
+.language-select::after {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  content: "▼";
+  font-size: 0.7rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.language-select select {
+  width: 100%;
+  min-height: 52px;
+  appearance: none;
+  border: 4px solid var(--ink);
+  border-radius: 0;
+  background: var(--yellow);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 900;
+  padding: 0 34px 0 14px;
+  text-transform: uppercase;
+}
+
+.language-select select:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .brand-logo,
@@ -427,15 +483,28 @@ details,
 }
 
 .marquee {
-  display: flex;
-  gap: 0;
   overflow: hidden;
   border-top: 4px solid var(--ink);
   border-bottom: 4px solid var(--ink);
   background: var(--ink);
 }
 
-.marquee span {
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+.marquee-content {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.marquee-content span {
+  display: inline-flex;
+  align-items: center;
   flex: 0 0 auto;
   padding: 18px 34px;
   color: var(--white);
@@ -443,6 +512,22 @@ details,
   font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+.marquee-content span::after {
+  margin-left: 68px;
+  color: var(--brand);
+  content: "✦";
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .section-heading {
@@ -750,6 +835,12 @@ details p {
     width: 100%;
   }
 
+  .header-actions {
+    display: grid;
+    grid-template-columns: minmax(82px, 0.35fr) minmax(0, 1fr);
+    width: 100%;
+  }
+
   .brand-logo {
     width: 210px;
   }
@@ -772,6 +863,15 @@ details p {
   .site-header > * {
     width: min(330px, calc(100vw - 40px));
     max-width: min(330px, calc(100vw - 40px));
+  }
+
+  .header-actions {
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+
+  .language-select,
+  .language-select select {
+    width: 100%;
   }
 
   .brand-logo {
@@ -916,6 +1016,10 @@ details p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+
   *,
   *::before,
   *::after {
