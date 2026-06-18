@@ -33,6 +33,68 @@
       height: 30px !important;
     }
 
+    #altikod-chat-greeting {
+      position: fixed;
+      right: 104px;
+      bottom: 25px;
+      z-index: 2147483644;
+      width: min(310px, calc(100vw - 140px));
+      border: 4px solid #000;
+      border-radius: 0;
+      background: #fffdf5;
+      box-shadow: 7px 7px 0 #000;
+      color: #000;
+      cursor: pointer;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      padding: 14px 18px;
+      text-align: left;
+      transition: transform 120ms linear, opacity 120ms linear;
+    }
+
+    #altikod-chat-greeting::after {
+      position: absolute;
+      right: -16px;
+      bottom: 15px;
+      width: 24px;
+      height: 24px;
+      border-top: 4px solid #000;
+      border-right: 4px solid #000;
+      background: #fffdf5;
+      content: "";
+      transform: rotate(45deg);
+    }
+
+    #altikod-chat-greeting:hover {
+      transform: translate(-2px, -2px);
+    }
+
+    #altikod-chat-greeting strong,
+    #altikod-chat-greeting span {
+      position: relative;
+      z-index: 1;
+      display: block;
+    }
+
+    #altikod-chat-greeting strong {
+      margin-bottom: 4px;
+      color: #ce4e4d;
+      font-size: 0.95rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    #altikod-chat-greeting span {
+      font-size: 0.86rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    #altikod-chat-greeting.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+    }
+
     #nxc-badge {
       top: -10px !important;
       right: -10px !important;
@@ -183,6 +245,21 @@
     }
 
     @media (max-width: 480px) {
+      #altikod-chat-greeting {
+        right: 92px;
+        bottom: 24px;
+        width: min(245px, calc(100vw - 120px));
+        padding: 11px 13px;
+      }
+
+      #altikod-chat-greeting strong {
+        font-size: 0.8rem;
+      }
+
+      #altikod-chat-greeting span {
+        font-size: 0.76rem;
+      }
+
       #nxc-container {
         border: 0 !important;
         box-shadow: none !important;
@@ -191,4 +268,42 @@
   `;
 
   document.head.appendChild(style);
+
+  function mountGreeting() {
+    const toggle = document.querySelector("#nxc-toggle");
+    const container = document.querySelector("#nxc-container");
+    if (!toggle || !container || document.querySelector("#altikod-chat-greeting")) return false;
+
+    const greeting = document.createElement("button");
+    greeting.id = "altikod-chat-greeting";
+    greeting.type = "button";
+    greeting.setAttribute("aria-label", "Altıkod Yapay Zeka Asistanı ile sohbeti aç");
+    greeting.innerHTML = `
+      <strong>Merhaba!</strong>
+      <span>Ben Altıkod Yapay Zeka Asistanı. Size nasıl yardımcı olabilirim?</span>
+    `;
+    document.body.appendChild(greeting);
+
+    const syncVisibility = () => {
+      greeting.classList.toggle("is-hidden", container.classList.contains("open"));
+    };
+
+    greeting.addEventListener("click", () => {
+      if (!container.classList.contains("open")) toggle.click();
+    });
+
+    new MutationObserver(syncVisibility).observe(container, {
+      attributes: true,
+      attributeFilter: ["class"]
+    });
+    syncVisibility();
+    return true;
+  }
+
+  if (!mountGreeting()) {
+    const observer = new MutationObserver(() => {
+      if (mountGreeting()) observer.disconnect();
+    });
+    observer.observe(document.body, { childList: true });
+  }
 })();
